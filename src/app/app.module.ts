@@ -12,7 +12,7 @@ export function initializeApplication() {
     return new Promise<void>((resolve) => {
 
       // Extend logo spinner on startup for funzies
-      setTimeout(() => { resolve(); }, 4000);
+      setTimeout(() => { resolve(); }, 3000);
 
     });
   }
