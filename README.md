@@ -13,7 +13,7 @@ The content on this app is for informational purposes only. This information sho
 ![example usage](./src//assets//images//example.png)
 
 ## Installation for Non-Techies
-1. Download this zip file and extract the folder to your Desktop: 
+1. Download the app's zip file from [here](https://github.com/cheekyavo/cheekyavo/raw/main/CheekyAvo.zip) and extract the folder to your Desktop: 
 2. Run CheekyAvo.exe
 ## Installation for Techies
 
