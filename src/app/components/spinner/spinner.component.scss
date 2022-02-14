@@ -1,0 +1,54 @@
+.app-spinner {
+
+  height: calc(100vh);
+  width: calc(100vw);
+  z-index: 1001;
+  background-color: rgb(255 255 255 / 87%);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .splash-loader {
+
+    position: absolute;
+    right: calc(50vw - 25px);
+    top: calc(50vh - 100px);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+
+  }
+
+  .splash-loader:after {
+    content: '';
+    background: transparent;
+    width: 140%;
+    height: 140%;
+    position: absolute;
+    border-radius: 100%;
+    top: -20%;
+    left: -20%;
+    opacity: 0.7;
+    box-shadow: rgba(0, 0, 0, 0.6) -4px -5px 3px -3px;
+    animation: rotate 1s infinite linear;
+  }
+
+  .splash-loader img {
+    margin-top: 5px;
+    margin-left: 6px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotateZ(0deg);
+    }
+
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+}

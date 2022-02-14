@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cheeky Avo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet" />
+
+  <style type="text/css">
+
+    .splash-loader {
+      position: absolute;
+      right: calc(50vw - 25px);
+      top: calc(50vh - 25px);
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .splash-loader:after {
+      content: '';
+      background: transparent;
+      width: 140%;
+      height: 140%;
+      position: absolute;
+      border-radius: 100%;
+      top: -20%;
+      left: -20%;
+      opacity: 0.7;
+      box-shadow: rgba(0, 0, 0, 0.6) -4px -5px 3px -3px;
+      animation: rotate 1s infinite linear;
+    }
+
+    .splash-loader img {
+      margin-top: 5px;
+      margin-left: 6px;
+      width: 40px;
+      height: 40px;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateZ(0deg);
+      }
+
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <app-root>
+    <div class="splash-loader">
+      <img src="assets/images/avocado.png" />
+    </div>
+  </app-root>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.app-component {
+
+  .banner {
+
+    img {
+
+      width: calc(80vw);
+      border-radius: 10px;
+      box-shadow: 0 0 3px rgba(57, 63, 72, 0.3);
+      margin-top: 10px;
+
+    }
+
+  }
+
+  .explanation {
+
+    width: calc(80vw);
+    margin-left: auto;
+    margin-right: auto;
+
+    p {
+
+      text-align: justify;
+      text-justify: inter-word;
+
+    }
+
+  }
+
+  .textbox {
+
+    input {
+
+      width: calc(80vw);
+      height: 50px;
+      border-radius: 10px;
+
+    }
+
+  }
+
+  .submit {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 144px;
+
+    button {
+
+      min-height: 52px;
+      min-width: 144px;
+      max-width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+
+    }
+
+  }
+
+  .results {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(80vw);
+
+    .error {
+
+      color: red;
+      text-align: center;
+      margin-top: 30px;
+
+    }
+
+    .success {
+
+      color: rgb(3, 3, 3);
+      text-align: center;
+      margin-top: 30px;
+
+    }
+
+  }
+
+}
