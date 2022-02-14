@@ -7,13 +7,13 @@
 
     <p>The content on this app is for informational purposes only. This information should not be taken as financial, investment or legal advice.</p>
 
-    <p><b>Instructions</b>: Paste the listing URL from the "TM" website into the <i>'Enter URL:'</i> box. The search will take <b>~30 seconds</b>.</p>
+    <p><b>Instructions</b>: Paste the listing URL <b>(ctrl+v)</b> from the "TM" website into the <i>'Enter URL:'</i> box. The search will take <b>~30 seconds</b>.</p>
 
   </div>
 
   <p align="center" class="textbox">
 
-    <input type="text" placeholder="Enter full URL here" id="url" [(ngModel)]="url" autofocus>
+    <input (keydown.enter)="submit()" type="text" placeholder="Enter full URL here" id="url" [(ngModel)]="url" autofocus>
 
   </p>
 

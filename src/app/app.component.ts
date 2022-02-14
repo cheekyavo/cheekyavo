@@ -22,7 +22,11 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    this.cd.detectChanges();
+    setTimeout(() => {
+
+      this.cd.markForCheck();
+
+    }, 5000);
 
   }
 

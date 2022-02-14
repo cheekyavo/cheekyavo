@@ -10,7 +10,7 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1220,
+    width: 1280,
     height: 768,
     autoHideMenuBar: true,
     icon: path.join(__dirname, '/dist/cheekyavo/favicon.ico')
