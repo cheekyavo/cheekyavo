@@ -86,6 +86,9 @@ export class PriceService {
           const newMin = index === 0 ? min : min + (increment * index);
           const newMax = increment + newMin;
 
+          console.log('newMin', newMin);
+          console.log('newMax', newMax);
+
           promises.push(this.checkListingPrice(listingDetails, newMin, newMax));
 
         }
@@ -127,11 +130,13 @@ export class PriceService {
 
       const url = `https://www.trademe.co.nz/a/property/residential/sale/${listingDetails.region}/${listingDetails.district}/${listingDetails.suburb}/search?price_min=${min}&price_max=${max}&search_string=${listingDetails.title}`;
 
+      console.log('url', url);
+
       try {
 
         let html = '';
         html = await this.api.get(url);
-        const isValid = html.toLowerCase().includes('showing 1 result');
+        const isValid = !html.toLowerCase().includes('showing 0 results');
 
         if (isValid) {
 
