@@ -14,7 +14,7 @@ const createWindow = () => {
     height: 768,
     autoHideMenuBar: true,
     icon: path.join(__dirname, '/dist/cheekyavo/favicon.ico'),
-    webPreferences: { nodeIntegration: false }
+    webPreferences: { nodeIntegration: false, webSecurity: false }
   });
 
   // and load the index.html of the app.
