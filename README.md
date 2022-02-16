@@ -13,9 +13,24 @@ The content on this app is for informational purposes only. This information sho
 ![example usage](./src//assets//images//example.png)
 
 ## Installation for Non-Techies
-1. Download the app's zip file from [here](https://coreblobdev.blob.core.windows.net/cheeky/CheekyAvo.zip) and extract the folder to your Desktop.
-2. Run CheekyAvo.exe
+Latest version can be found [here](https://github.com/cheekyavo/cheekyavo/releases)
+
+### Windows
+1. Download the setup exe
+1. Run it
+
+### Mac
+1. Download the 'darwin' zip file
+1. Extract the zip file in your Downloads folder
+1. Right click the app and select 'Open'. (Only needed the first time)
+
 ## Installation for Techies
 
+### Local Dev
 1. `npm install`
 2. `npm start`
+
+### Releasing new versions
+1. `npm version <major|minor|patch>`
+1. `git push --tags`
+1. When the build is complete check the release and publish it.
