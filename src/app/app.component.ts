@@ -48,7 +48,7 @@ export class AppComponent implements AfterViewInit {
 
     } else {
 
-      // Check listings up to 5 million
+      // Check listings up to 10 million
       this.priceService.getListingPrice(listingDetails, 0, 10000000).then((results) => {
 
 

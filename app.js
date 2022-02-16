@@ -13,14 +13,15 @@ const createWindow = () => {
     width: 1280,
     height: 768,
     autoHideMenuBar: true,
-    icon: path.join(__dirname, '/dist/cheekyavo/favicon.ico')
+    icon: path.join(__dirname, '/dist/cheekyavo/favicon.ico'),
+    webPreferences: { nodeIntegration: false }
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, '/dist/cheekyavo/index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

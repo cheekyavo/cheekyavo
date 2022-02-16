@@ -130,8 +130,6 @@ export class PriceService {
 
       const url = `https://www.trademe.co.nz/a/property/residential/sale/${listingDetails.region}/${listingDetails.district}/${listingDetails.suburb}/search?price_min=${min}&price_max=${max}&search_string=${listingDetails.title}`;
 
-      console.log('url', url);
-
       try {
 
         let html = '';
