@@ -229,7 +229,7 @@ async function checkListingPrice(listingDetails, min, max) {
 
     if (listingDetails.type === 're') {
 
-        url = `www.realestate.co.nz/${listingDetails.propertyCategory}/sale/${listingDetails.region}/${listingDetails.district}/${listingDetails.suburb}?k="${listingDetails.title}"&minp=${min}&maxp=${max}`;
+        url = `https://www.realestate.co.nz/${listingDetails.propertyCategory}/sale/${listingDetails.region}/${listingDetails.district}/${listingDetails.suburb}?k="${listingDetails.title}"&minp=${min}&maxp=${max}`;
 
     } else {
 
