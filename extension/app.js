@@ -4,14 +4,26 @@ $(function() {
     const listingDetails = getListingDetails();
 
     if (listingDetails.title) {
+        const cachedResult =  getCachedResult(listingDetails);
 
+        // Delay to allow follow page render
         setTimeout(() => {
-            startPriceSearch(listingDetails);
+            setUpHtml(listingDetails);
+            cachedResult ? addFinalPrice(cachedResult.price) : startPriceSearch(listingDetails);
         }, 2000);
-    
+
     }
 
 });
+
+function getCachedResult(listingDetails) {
+    if (localStorage) {
+        const lsCache = localStorage.getItem('avo-cache');
+        const cache = lsCache ? JSON.parse(lsCache) : [];
+        const cachedResult = cache.find(item => item.title === listingDetails.title);
+        return cachedResult;
+    }
+}
 
 function getListingDetails() {
 
@@ -44,10 +56,10 @@ function getListingDetails() {
     }
 
     return listingDetails;
-    
+
 }
 
-async function startPriceSearch(listingDetails) {
+function setUpHtml(listingDetails) {
 
     // Set some global styles
     $('head').append(`
@@ -152,13 +164,11 @@ async function startPriceSearch(listingDetails) {
             </span>
 
         </div>
-        
     `);
+}
 
+function addFinalPrice(price) {
     try {
-
-        const results = await getListingPrice(listingDetails, 0, 10000000)
-
         $("#cheeky-progress").remove();
         $("#cheeky-price").remove();
         $("#cheeky-loader").remove();
@@ -172,12 +182,11 @@ async function startPriceSearch(listingDetails) {
                 Cheeky price discovered:
             </span>
             <span id="cheeky-price">
-                <strong>$${results.min.toLocaleString('en')}</strong>
+                <strong>$${price.toLocaleString('en')}</strong>
             </span>
         `);
-        
-    } catch (error) {
 
+    } catch (error) {
         $("#cheeky-progress").remove();
         $("#cheeky-price").remove();
         $("#cheeky-loader").remove();
@@ -191,9 +200,24 @@ async function startPriceSearch(listingDetails) {
                 Error processing this listing
             </span>
         `);
-        
+
+    }
+}
+
+async function startPriceSearch(listingDetails) {
+    const result = await getListingPrice(listingDetails, 0, 10000000);
+
+    const price = result.min;
+
+    if (localStorage) {
+        // Cache the price for future reference
+        const lsCache = localStorage.getItem('avo-cache');
+        const cache = lsCache ? JSON.parse(lsCache) : [];
+        cache.push({'title': listingDetails.title, price: price});
+        localStorage.setItem('avo-cache', JSON.stringify(cache));
     }
 
+    addFinalPrice(price);
 }
 
 async function checkListingPrice(listingDetails, min, max) {
@@ -221,13 +245,13 @@ async function checkListingPrice(listingDetails, min, max) {
 }
 
 async function getListingPrice(listingDetails, min, max) {
- 
+
     try {
 
         const promises = [];
 
         if (min === max) {
-      
+
             promises.push(this.checkListingPrice(listingDetails, min, min));
 
         } else if ((max - min) === 1000) {
