@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Cheeky Avo",
   "description": "No burnt toast allowed!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "permissions": [],
   "icons": {
     "16": "icons/avo16.png",
