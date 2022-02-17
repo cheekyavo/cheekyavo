@@ -1,6 +1,6 @@
 # Cheeky Avo 
 
-This custom Chrome extension was inspired by Property Price Checker [https://propertyprice.co.nz](https://propertyprice.co.nz) </br>
+This custom Chrome / Firefox extension was inspired by Property Price Checker [https://propertyprice.co.nz](https://propertyprice.co.nz) </br>
 It works for 2 of the largest real estate websites in New Zealand: <b>TM</b> and <b>RE</b>. This is an open-source project: feel free to contribute or copy the code as needed. 
 
 <br/>
@@ -32,7 +32,7 @@ Just navigate normally to listing details and the discovered price will be shown
 
 <br/>
 
-## Installation
+## Chrome Installation
 1. Download the zip file from [here](https://downgit.github.io/#/home?url=https://github.com/cheekyavo/cheekyavo/tree/main/extension) and extract the folder to your Desktop.
 2. Open Google Chrome and navigate to this url: <b>chrome://extensions/</b> or go to Settings -> Extensions in Chrome's Menu.
 3. Turn on Developer Mode and click Load Unpacked in the upper left side: <br/><br/>
@@ -44,6 +44,12 @@ Just navigate normally to listing details and the discovered price will be shown
 ![example price](./images//icon-unpinned.png) <br/>
 7. Avo will now light up green every time you visit TM or RE, indicating that it's running for those sites:<br/><br/>
 ![example price](./images//icon-green.png) <br/>
+
+<br/>
+
+## Firefox Installation
+1. Download the zip file from [here](https://downgit.github.io/#/home?url=https://github.com/cheekyavo/cheekyavo/tree/main/extension) and extract the folder to your Desktop.
+2. Follow Firefox installation instructions [here](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/).
 
 <br/>
 
