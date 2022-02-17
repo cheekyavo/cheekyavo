@@ -150,7 +150,7 @@ async function startPriceSearch(listingDetails) {
                     $${'0'.toLocaleString('en')} and $${'10000000'.toLocaleString('en')}
                 </span>
             </span>
-            
+
         </div>
         
     `);
@@ -202,7 +202,7 @@ async function checkListingPrice(listingDetails, min, max) {
 
     if (listingDetails.type === 're') {
 
-        url = `https://www.realestate.co.nz/${listingDetails.propertyCategory}/sale/${listingDetails.region}/${listingDetails.district}/${listingDetails.suburb}?k="${listingDetails.title}"&minp=${min}&maxp=${max}`;
+        url = `www.realestate.co.nz/${listingDetails.propertyCategory}/sale/${listingDetails.region}/${listingDetails.district}/${listingDetails.suburb}?k="${listingDetails.title}"&minp=${min}&maxp=${max}`;
 
     } else {
 
