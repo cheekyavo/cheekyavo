@@ -40,17 +40,17 @@ function getListingDetails() {
 
         listingDetails.title = encodeURIComponent($('.tm-property-listing-body__title')?.text()?.trim()?.toLowerCase());
         const location = $('.tm-property-listing-body__location').text().trim().split(',');
-        listingDetails.region = location[location.length - 1].trim().toLowerCase().replace(' ', '-');
-        listingDetails.district = location[location.length - 2].trim().toLowerCase().replace(' ', '-');
-        listingDetails.suburb = location[location.length - 3].trim().toLowerCase().replace(' ', '-');
+        listingDetails.region = location[location.length - 1].trim().toLowerCase().replace(/ /g, '-');
+        listingDetails.district = location[location.length - 2].trim().toLowerCase().replace(/ /g, '-');
+        listingDetails.suburb = location[location.length - 3].trim().toLowerCase().replace(/ /g, '-');
         listingDetails['anchor'] = '.tm-property-listing-body__price';
 
     } else {
 
         listingDetails.title = encodeURIComponent($('div[data-test="listing-subtitle"]')?.text()?.trim()?.toLowerCase());
-        listingDetails.region = $('a[data-test="breadcrumbs__region"]').text().trim().toLowerCase().replace(' ', '-');
-        listingDetails.district = $('a[data-test="breadcrumbs__district"]').text().trim().toLowerCase().replace(' ', '-');
-        listingDetails.suburb = $('a[data-test="breadcrumbs__suburb"]').text().trim().toLowerCase().replace(' ', '-');
+        listingDetails.region = $('a[data-test="breadcrumbs__region"]').text().trim().toLowerCase().replace(/ /g, '-');
+        listingDetails.district = $('a[data-test="breadcrumbs__district"]').text().trim().toLowerCase().replace(/ /g, '-');
+        listingDetails.suburb = $('a[data-test="breadcrumbs__suburb"]').text().trim().toLowerCase().replace(/ /g, '-');
         listingDetails['anchor'] = 'div[data-test="page-section"]';
 
     }
@@ -168,6 +168,7 @@ function setUpHtml(listingDetails) {
 }
 
 function addFinalPrice(price) {
+
     try {
         $("#cheeky-progress").remove();
         $("#cheeky-price").remove();
@@ -205,6 +206,7 @@ function addFinalPrice(price) {
 }
 
 async function startPriceSearch(listingDetails) {
+
     const result = await getListingPrice(listingDetails, 0, 10000000);
 
     const price = result.min;
@@ -218,6 +220,7 @@ async function startPriceSearch(listingDetails) {
     }
 
     addFinalPrice(price);
+
 }
 
 async function checkListingPrice(listingDetails, min, max) {
