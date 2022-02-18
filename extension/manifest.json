@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Cheeky Avo",
-  "description": "No burnt toast allowed!",
-  "version": "1.0.1",
+  "description": "You can't stop the signal.",
+  "version": "1.0.4",
   "permissions": [],
   "icons": {
     "16": "icons/avo16.png",
