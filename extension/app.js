@@ -159,7 +159,7 @@ function setUpHtml(listingDetails) {
                     Checking between
                 </span>
                 <span id="cheeky-price">
-                    $${'0'.toLocaleString('en')} and $${'10000000'.toLocaleString('en')}
+                    $0 and $${parseInt(10000000).toLocaleString('en')}
                 </span>
             </span>
 
