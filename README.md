@@ -32,7 +32,7 @@ Just navigate normally to listing details and the discovered price will be shown
 
 <br/>
 
-## Chrome Installation (Also works for Edge)
+## Chrome Installation (also works for Edge)
 1. Download the zip file from [here](https://downgit.github.io/#/home?url=https://github.com/cheekyavo/cheekyavo/tree/main/extension) and extract the folder to your Desktop.
 2. Open Google Chrome and navigate to this url: <b>chrome://extensions/</b> or go to Settings -> Extensions in Chrome's Menu.
 3. Turn on Developer Mode and click Load Unpacked in the upper left side: <br/><br/>
@@ -50,6 +50,7 @@ Just navigate normally to listing details and the discovered price will be shown
 ## Firefox Installation
 1. Download the zip file from [here](https://downgit.github.io/#/home?url=https://github.com/cheekyavo/cheekyavo/tree/main/extension) and extract the folder to your Desktop.
 2. Follow Firefox installation instructions [here](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/).
+<br/><b>Warning</b>: It appears that the extension loading instructions have to be repeated every time you close Firefox (since it's meant for development testing only). I am looking for a way to make the loading permanent. Please stand by.
 
 <br/>
 
