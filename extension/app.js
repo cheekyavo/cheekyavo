@@ -39,7 +39,12 @@ function getListingDetails() {
     if (listingDetails.type === 'tm') {
 
         listingDetails.title = encodeURIComponent($('.tm-property-listing-body__title')?.text()?.trim()?.toLowerCase());
-        listingDetails.baseUrl = $('.tm-breadcrumbs').find('.o-breadcrumbs__item').last().find('a').attr('href');
+        listingDetails.baseUrl = $('.tm-breadcrumbs').find('.o-breadcrumbs__item')
+        .last()
+        .find('a')
+        .attr('href')
+        .replace('/sections-for-sale', '/sale')
+        .replace('/lifestyle-property', '/sale');
         listingDetails['anchor'] = '.tm-property-listing-body__price';
 
     } else {
