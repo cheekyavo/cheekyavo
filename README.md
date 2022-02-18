@@ -32,7 +32,7 @@ Just navigate normally to listing details and the discovered price will be shown
 
 <br/>
 
-## Chrome Installation
+## Chrome Installation (Also works for Edge)
 1. Download the zip file from [here](https://downgit.github.io/#/home?url=https://github.com/cheekyavo/cheekyavo/tree/main/extension) and extract the folder to your Desktop.
 2. Open Google Chrome and navigate to this url: <b>chrome://extensions/</b> or go to Settings -> Extensions in Chrome's Menu.
 3. Turn on Developer Mode and click Load Unpacked in the upper left side: <br/><br/>
