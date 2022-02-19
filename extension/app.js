@@ -38,7 +38,7 @@ function getListingDetails() {
 
     if (listingDetails.type === 'tm') {
 
-        listingDetails.title = encodeURIComponent($('.tm-property-listing-body__title')?.text()?.trim()?.toLowerCase());
+        listingDetails.title = window.location.href.split('/').pop().split('?')[0];
         listingDetails.baseUrl = $('.tm-breadcrumbs').find('.o-breadcrumbs__item')
         .last()
         .find('a')
