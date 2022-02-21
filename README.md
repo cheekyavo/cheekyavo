@@ -1,8 +1,21 @@
 # Search Outage
-Currently, TM and RE searches are down or showing wrong results. They have changed their APIs, so I am working on the solution.
+Currently, TM and RE searches are down or showing wrong results. They have changed their sites, so I am working on the solution.
 </br>
 </br>
+In the meantime, you can search manually using their sites' built-in search URLs.
 </br>
+</br>
+
+For TM:   www.trademe.co.nz/a/property/residential/sale/search?<strong>price_min</strong>=1000000&<strong>price_max</strong>=2000000&<strong>search_string</strong>=3474672755</br>
+For <strong>search_string</strong>, enter listing id that can be found on listing details page, at the end of the URL. Afterwards, manipulate <strong>price_min</strong> and <strong>price_max</strong> until you can ascertain the price down to $1,000. As long as the search returns results, the property falls within the min and a max range.
+</br>
+</br>
+
+For RE:   www.realestate.co.nz/residential/sale?<strong>minp</strong>=50000&<strong>maxp</strong>=900000&<strong>k</strong>=63 Routley Crescent, Elderslea</br>
+For <strong>k</strong>, enter listing title (address) that can be found on listing details page. Afterwards, manipulate <strong>minp</strong> and <strong>maxp</strong> until you can ascertain the price down to $1,000. As long as the search returns results, the property falls within the min and a max range.
+</br>
+</br>
+
 # Cheeky Avo 
 
 This custom Chrome / Firefox extension was inspired by Property Price Checker [https://propertyprice.co.nz](https://propertyprice.co.nz) </br>
