@@ -6,12 +6,12 @@ In the meantime, you can search manually using their sites' built-in search URLs
 </br>
 </br>
 
-For TM:   `www.trademe.co.nz/a/property/residential/sale/search?price_min=1000000&price_max=2000000&search_string=3474672755`</br>
+For TM:   [https://www.trademe.co.nz/a/property/residential/sale/search?price_min=1000000&price_max=2000000&search_string=3474672755](https://www.trademe.co.nz/a/property/residential/sale/search?price_min=1000000&price_max=2000000&search_string=3474672755)</br>
 For <strong>search_string</strong>, enter listing id that can be found on listing details page, at the end of the URL. Afterwards, manipulate <strong>price_min</strong> and <strong>price_max</strong> until you can ascertain the price down to $1,000. As long as the search returns results, the property falls within the min and a max range.
 </br>
 </br>
 
-For RE:   `www.realestate.co.nz/residential/sale?minp=50000&maxp=900000&k=63 Routley Crescent, Elderslea`</br>
+For RE:   [https://www.realestate.co.nz/residential/sale?minp=50000&maxp=900000&k=63 Routley Crescent, Elderslea](https://www.realestate.co.nz/residential/sale?minp=50000&maxp=900000&k=63%23Routley%23Crescent,%23Elderslea)</br>
 For <strong>k</strong>, enter listing title (address) that can be found on listing details page. Afterwards, manipulate <strong>minp</strong> and <strong>maxp</strong> until you can ascertain the price down to $1,000. As long as the search returns results, the property falls within the min and a max range.
 </br>
 </br>
