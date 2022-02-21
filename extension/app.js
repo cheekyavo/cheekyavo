@@ -169,8 +169,7 @@ function setUpHtml(listingDetails) {
 
 function addFinalPrice(price) {
 
-    try {
-        $("#cheeky-progress").remove();
+    $("#cheeky-progress").remove();
         $("#cheeky-price").remove();
         $("#cheeky-loader").remove();
 
@@ -185,9 +184,30 @@ function addFinalPrice(price) {
             <span id="cheeky-price">
                 <strong>$${price.toLocaleString('en')}</strong>
             </span>
-        `);
+    `);
 
+}
+
+async function startPriceSearch(listingDetails) {
+
+    try {
+
+        const result = await getListingPrice(listingDetails, 0, 10000000);
+
+        const price = result.min;
+
+        if (localStorage) {
+            // Cache the price for future reference
+            const lsCache = localStorage.getItem('avo-cache');
+            const cache = lsCache ? JSON.parse(lsCache) : [];
+            cache.push({'title': listingDetails.title, price: price});
+            localStorage.setItem('avo-cache', JSON.stringify(cache));
+        }
+
+        addFinalPrice(price);
+        
     } catch (error) {
+
         $("#cheeky-progress").remove();
         $("#cheeky-price").remove();
         $("#cheeky-loader").remove();
@@ -201,25 +221,8 @@ function addFinalPrice(price) {
                 Error processing this listing
             </span>
         `);
-
+        
     }
-}
-
-async function startPriceSearch(listingDetails) {
-
-    const result = await getListingPrice(listingDetails, 0, 10000000);
-
-    const price = result.min;
-
-    if (localStorage) {
-        // Cache the price for future reference
-        const lsCache = localStorage.getItem('avo-cache');
-        const cache = lsCache ? JSON.parse(lsCache) : [];
-        cache.push({'title': listingDetails.title, price: price});
-        localStorage.setItem('avo-cache', JSON.stringify(cache));
-    }
-
-    addFinalPrice(price);
 
 }
 
@@ -241,8 +244,16 @@ async function checkListingPrice(listingDetails, min, max) {
 
     }
 
-    const data = await $.get(url).promise();
-    const isValid = !data.toLowerCase().includes('showing 0 results') && !data.toLowerCase().includes('nothing to see here');
+    const data = await $.ajax({
+        method: 'GET',
+        url,
+        headers: { 'cookie': 'x-trademe-uniqueclientid=cheekyavo', 'user-agent': 'cheekyavo' }
+    }).promise();
+
+    const isValid = 
+    !data.toLowerCase().includes('showing 0 results') 
+    && !data.toLowerCase().includes('nothing to see here')
+    && !data.toLowerCase().includes('this site requires javascript');
 
     if (isValid) { return { isValid, min, max }; }
 
@@ -311,40 +322,12 @@ async function getListingPrice(listingDetails, min, max) {
 
         } else {
 
-            $("#cheeky-progress").remove();
-            $("#cheeky-price").remove();
-            $("#cheeky-loader").remove();
-
-            $('#cheeky-avo').prepend(`
-                <img id="cheeky-logo-loaded" src="data:image/png;base64, ${logo}"/>
-            `);
-
-            $('#cheeky-content').append(`
-                <span id="cheeky-error">
-                    Error processing this listing
-                </span>
-            `);
-
             console.error('No Results Found');
             throw new Error('No Results Found');
 
         }
 
     } catch (error) {
-
-        $("#cheeky-progress").remove();
-        $("#cheeky-price").remove();
-        $("#cheeky-loader").remove();
-
-        $('#cheeky-avo').prepend(`
-            <img id="cheeky-logo-loaded" src="data:image/png;base64, ${logo}"/>
-        `);
-
-        $('#cheeky-content').append(`
-            <span id="cheeky-error">
-                Error processing this listing
-            </span>
-        `);
 
         console.error(error);
         throw new Error('No Results Found');
