@@ -1,3 +1,8 @@
+# Search Outage
+Currently, TM and RE searches are down or showing wrong results. They have changed their APIs, so I am working on the solution.
+</br>
+</br>
+</br>
 # Cheeky Avo 
 
 This custom Chrome / Firefox extension was inspired by Property Price Checker [https://propertyprice.co.nz](https://propertyprice.co.nz) </br>
